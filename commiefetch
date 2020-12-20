@@ -1,3 +1,6 @@
+#!/usr/bin/env bash
+
+XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-${HOME}/.config}
 
 # Get user
 user="${USER-$(id -u -n)}"
@@ -12,6 +15,38 @@ host="$(uname -n)"
 # current=$(python ~/.config/rofi/applets/applets/play_pause.py -f '{song}')
 
 #####################
+
+read -rd '' config <<'EOF'
+print_info() {
+
+}
+yoffset=1
+xoffset=0
+EOF
+
+get_user_config() {
+    # --config /path/to/config.conf
+    if [[ -f "$config_file" ]]; then
+        source "$config_file"
+        err "Config: Sourced user config. (${config_file})"
+        return
+
+    elif [[ -f "${XDG_CONFIG_HOME}/commiefetch/config.conf" ]]; then
+        source "${XDG_CONFIG_HOME}/commiefetch/config.conf"
+        err "Config: Sourced user config.    (${XDG_CONFIG_HOME}/commiefetch/config.conf)"
+
+    elif [[ -f "${XDG_CONFIG_HOME}/commiefetch/config" ]]; then
+        source "${XDG_CONFIG_HOME}/commiefetch/config"
+        err "Config: Sourced user config.    (${XDG_CONFIG_HOME}/commiefetch/config)"
+
+    elif [[ -z "$no_config" ]]; then
+        config_file="${XDG_CONFIG_HOME}/commiefetch/config.conf"
+
+        # The config file doesn't exist, create it.
+        mkdir -p "${XDG_CONFIG_HOME}/commiefetch/"
+        printf '%s\n' "$config" > "$config_file"
+    fi
+}
 
 # Colors and palette method stolen from dylanaraps pftech: https://github.com/dylanaraps/pfetch
 c0='[0m'
@@ -43,6 +78,18 @@ ARTz="${c0}${bold}                       "
 
 sovdiff=$(( ($(date +%s) - $(date -d "1991-12-25 UTC" +%s)) / (60*60*24) ))
 
+get_args() {
+    # Check the commandline flags early for '--config'.
+    [[ "$*" != *--config* && "$*" != *--no_config* ]] && get_user_config
+
+}
+
+eval "$config"
+
+get_args "$@"
+
+
+
 # Print
 cat <<-EOF
 
@@ -58,4 +105,5 @@ cat <<-EOF
  ${ART0}    
  
  ${ARTz}    ${c1}███${c2}███${c3}███${c4}███${c5}███
+
 EOF

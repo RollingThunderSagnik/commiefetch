@@ -3,7 +3,7 @@
 <h3>a fetch for communists around the world</h3s>
 </div>
 
-> under construction
+> still under construction
 
 ### Installation
 

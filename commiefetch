@@ -1,0 +1,65 @@
+#! /bin/sh
+
+# CatFetch, based on mfetch by depsterr: https://github.com/depsterr/mfetch
+
+#####################
+# Info
+#####################
+
+# Get user
+user="${USER-$(id -u -n)}"
+
+# Get host
+host="$(uname -n)"
+
+#####################
+# Colors and palette
+#####################
+# artist=$(python ~/.config/rofi/applets/applets/play_pause.py -f '{artist}')
+# album=$(python ~/.config/rofi/applets/applets/play_pause.py -f '{album}')
+# current=$(python ~/.config/rofi/applets/applets/play_pause.py -f '{song}')
+#
+# Colors and palette method stolen from dylanaraps pftech: https://github.com/dylanaraps/pfetch
+c0='[0m'
+c1='[31m'; c2='[32m'
+c3='[33m'; c4='[34m'
+c5='[35m'; c6='[36m'
+c7='[37m'; c8='[38m'
+c9='^[[37m'
+
+palette="[7m$c1 $c1 $c2 $c2 $c3 $c3 $c4 $c4 $c5 $c5 $c6 $c6 [m"
+
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+ARTR1="${c0}${bold}             ,\,       "
+ARTR2="${c0}${bold}              +\*:     "
+ARTR3="${c0}${bold}       ,+S##?  :#@+    "
+ARTR4="${c0}${bold}     ,+S@@@%,   :@@+   "
+ARTR5="${c0}${bold}     ,%@#S@@S\   %@#,  "
+ARTR6="${c0}${bold}       *  ;S@@%\ %@#,  "
+ARTR7="${c0}${bold}    /@,     ;S@@%@@*   "
+ARTR8="${c0}${bold}  ,/@%@%+:,,,:%@@@#}   "
+ARTR9="${c0}${bold} ,/@%/+S@@@@@@@@%#@&   "
+ARTR0="${c0}${bold}  //      ++++   ,&&}  "
+ARTRz="${c0}${bold}                       "
+
+
+sovdiff=$(( ($(date +%s) - $(date -d "1991-12-25 UTC" +%s)) / (60*60*24) ))
+
+# Print
+cat <<-EOF
+
+ ${ARTR1}    
+ ${ARTR2}    ${c5}${bold}comrade${c0} ${bold}${user}
+ ${ARTR3}    ${normal}${c0}of ${host}
+ ${ARTR4}    
+ ${ARTR5}    ${c5}${sovdiff} ${normal}days since USSR broke
+ ${ARTR6}    
+ ${ARTR7}    
+ ${ARTR8}    
+ ${ARTR9}    
+ ${ARTR0}    
+ 
+ ${ARTRz}    ${c1}███${c2}███${c3}███${c4}███${c5}███
+EOF

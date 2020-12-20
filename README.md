@@ -1,17 +1,19 @@
 <div align="center">
 <h1>commiefetch ☭</h1>
-<h3>a fetch for communists worldwide</h3s>
+<h3>a fetch for communists around the world</h3s>
 </div>
 
 > under construction
 
 ### Installation
 
-1. Clone this repo with `git clone https://github.com/RollingThunderSagnik/commiefetch.git`
-2. Run `cd commiefetch`
-3. Run `sudo make install`
-4. Now you can run it with `commiefetch` 
-5. ENJOY! ✊✊✊
+1. Read books of Marx, Engels, Lenin, Stalin, Trotsky, Mao, Charu, Nabarun
+2. Clone this repo with `git clone https://github.com/RollingThunderSagnik/commiefetch.git`
+3. Run `cd commiefetch`
+4. Run `sudo make install`
+5. Now you can run it anywhere with `commiefetch` 
+6. Comrades, mobilise! ✊✊✊
+
 
 ### Contribution
 
@@ -21,16 +23,16 @@ This fetch is thought to be used as a personal fetch and have your own fork of i
 ##### Art:
 
 ```shell
-"             ,:,       "
-"           ,,,+%*:     "
+"             ,\,       "
+"              +\*:     "
 "       ,+S##?  :#@+    "
 "     ,+S@@@%,   :@@+   "
-"     ,%@#S@@S;   %@#,  "
-"       :, ;S@@%: %@#,  "
-"    ,+,     ;S@@%@@*   "
-"  ,*@@@%+:,,,:%@@@#,   "
-" ,%@%:+S@@@@@@@@%#@+   "
-"  ,:    ,;++++:, ,:    "
+"     ,%@#S@@S\   %@#,  "
+"       *  ;S@@%\ %@#,  "
+"    /@,     ;S@@%@@*   "
+"  ,/@%@%+:,,,:%@@@#}   "
+" ,/@%/+S@@@@@@@@%#@&   "
+"  //      ++++   ,&&}  "
 "                       "
 
 #Octocats of Github unite!

@@ -17,11 +17,8 @@ host="$(uname -n)"
 #####################
 
 read -rd '' config <<'EOF'
-print_info() {
-
-}
-yoffset=1
-xoffset=0
+stance=marxist
+language=russian
 EOF
 
 get_user_config() {
@@ -89,7 +86,6 @@ eval "$config"
 get_args "$@"
 
 
-
 # Print
 cat <<-EOF
 
@@ -97,13 +93,16 @@ cat <<-EOF
  ${ART2}    ${c5}${bold}comrade${c0} ${bold}${user}
  ${ART3}    ${normal}${c0}of ${host}
  ${ART4}    
- ${ART5}    ${c5}${sovdiff} ${normal}days since USSR broke
- ${ART6}    
+ ${ART5}    ${c5}${bold}stance${c0}     ${normal}${stance}
+ ${ART6}    ${c5}${bold}language${c0}   ${normal}${language}
  ${ART7}    
  ${ART8}    
  ${ART9}    
- ${ART0}    
+ ${ART0}    ${c5}${sovdiff} ${normal}days since USSR broke
  
  ${ARTz}    ${c1}███${c2}███${c3}███${c4}███${c5}███
 
 EOF
+
+
+xdg-open https://www.youtube.com/watch?v=t8EMx7Y16Vo &>/dev/null

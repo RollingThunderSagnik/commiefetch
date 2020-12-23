@@ -8,6 +8,79 @@ user="${USER-$(id -u -n)}"
 # Get host
 host="$(uname -n)"
 
+hammer_sickle()
+{
+ART1="${c1}${bold}             .\,       "
+ART2="${c1}${bold}              +\*:     "
+ART3="${c1}${bold}       ,+S##?  :#@+    "
+ART4="${c1}${bold}     ,+S@@@%,   :@@+   "
+ART5="${c1}${bold}     ,%@#S@@S\   %@#,  "
+ART6="${c1}${bold}       *  \S@@%\ %@#,  "
+ART7="${c1}${bold}    /@,     \S@@%@@*   "
+ART8="${c1}${bold}  ,/@%@%+:,,,:%@@@#    "
+ART9="${c1}${bold} ,/@%/+S@@@@@@@@%#@&   "
+ART0="${c1}${bold}  //      ''''   '&&]  "
+ARTz="${c1}${bold}                       "
+}
+
+
+print_info(){
+
+# music
+case $language in
+    "1") 
+    language='Russian';;
+    "2") 
+    language='Bengali';;
+    "3") 
+    language="Hindi/Urdu";;
+    "4") 
+    language="German";;
+    "5") 
+    language="French";;
+    "6") 
+    language="Chinese";;
+esac
+foo=$((1 + $RANDOM % 10))
+cat <<-EOF
+
+ ${ART1}    
+ ${ART2}    ${c1}${bold}comrade${c0} ${user}
+ ${ART3}    ${normal}of ${host}
+ ${ART4}    
+ ${ART5}    ${c1}${bold}stance     ${normal}${stance}
+ ${ART6}    ${c1}${bold}language   ${normal}${language}
+ ${ART7}    
+ ${ART8}    
+ ${ART9}    
+ ${ART0}    ${c1}${sovdiff} ${normal}days since USSR broke
+ 
+ ${ARTz}    ${c1}███${c5}███${c4}███${c3}███${c2}███
+ 
+EOF
+}
+
+music(){
+    # echo "halo" $language
+case $language in
+                # Info
+"1") 
+xdg-open https://youtu.be/t8EMx7Y16Vo &>/dev/null;;
+"2") 
+xdg-open https://youtu.be/dvtNyCtVmNk &>/dev/null;;
+"3") 
+xdg-open https://youtu.be/RIRauszSIAg &>/dev/null;;
+"4") 
+xdg-open https://youtu.be/bzcAeZpVI1Q &>/dev/null;;
+"5") 
+xdg-open https://youtu.be/cKSjkklFzyU &>/dev/null;;
+"6") 
+xdg-open https://youtu.be/X9pGTOlhRvs &>/dev/null;;
+
+esac
+}
+
+
 #####################
 
 # artist=$(python ~/.config/rofi/applets/applets/play_pause.py -f '{artist}')
@@ -21,8 +94,49 @@ stance=marxist
 language=russian
 EOF
 
+color() {
+    case $1 in
+        [0-6])    printf '%b\e[3%sm'   "$reset" "$1" ;;
+        7 | "fg") printf '\e[37m%b'    "$reset" ;;
+        *)        printf '\e[38;5;%bm' "$1" ;;
+    esac
+}
+
+err() {
+    err+="$(color 1)[!]${reset} $1
+"
+}
+
+make_config(){
+    read -p "Choose your stance: " stance
+    cat <<- EOF
+    1. Russian
+    2. Bengali
+    3. Hindi/Urdu
+    4. German
+    5. French
+    6. Chinese
+EOF
+    read -p "What is your language: " language
+    while [[ ! $language =~ ^[0-9]+$ ]] ; do
+        read -p "Please enter a number " language
+    done
+    read -rd '' config <<EOF
+    stance=${stance}
+    language=${language}
+EOF
+
+        config_file="${XDG_CONFIG_HOME}/commiefetch/config.conf"
+
+        # The config file doesn't exist, create it.
+        mkdir -p "${XDG_CONFIG_HOME}/commiefetch/"
+        printf '%s\n' "$config" > "$config_file"
+
+
+}
+
 get_user_config() {
-    # --config /path/to/config.conf
+    # -config /path/to/config.conf
     if [[ -f "$config_file" ]]; then
         source "$config_file"
         err "Config: Sourced user config. (${config_file})"
@@ -37,72 +151,58 @@ get_user_config() {
         err "Config: Sourced user config.    (${XDG_CONFIG_HOME}/commiefetch/config)"
 
     elif [[ -z "$no_config" ]]; then
-        config_file="${XDG_CONFIG_HOME}/commiefetch/config.conf"
-
-        # The config file doesn't exist, create it.
-        mkdir -p "${XDG_CONFIG_HOME}/commiefetch/"
-        printf '%s\n' "$config" > "$config_file"
+        cat <<- EOF
+No config file found.
+Run commiefetch -config or commiefetch -c to generate one.
+EOF
+        exit 2
     fi
 }
 
-# Colors and palette method stolen from dylanaraps pftech: https://github.com/dylanaraps/pfetch
-c0='[0m'
-c1='[31m'; c2='[32m'
-c3='[33m'; c4='[34m'
-c5='[35m'; c6='[36m'
-c7='[37m'; c8='[38m'
-c9='^[[37m'
-
-palette="[7m$c1 $c1 $c2 $c2 $c3 $c3 $c4 $c4 $c5 $c5 $c6 $c6 [m"
-
-RED='\033[0;31m'
-
-bold=$(tput bold)
-normal=$(tput sgr0)
-
-ART1="${c0}${bold}             .\,       "
-ART2="${c0}${bold}              +\*:     "
-ART3="${c0}${bold}       ,+S##?  :#@+    "
-ART4="${c0}${bold}     ,+S@@@%,   :@@+   "
-ART5="${c0}${bold}     ,%@#S@@S\   %@#,  "
-ART6="${c0}${bold}       *  \S@@%\ %@#,  "
-ART7="${c0}${bold}    /@,     \S@@%@@*   "
-ART8="${c0}${bold}  ,/@%@%+:,,,:%@@@#}   "
-ART9="${c0}${bold} ,/@%/+S@@@@@@@@%#@&   "
-ART0="${c0}${bold}  //      ''''   '&&}  "
-ARTz="${c0}${bold}                       "
-
-
-sovdiff=$(( ($(date +%s) - $(date -d "1991-12-25 UTC" +%s)) / (60*60*24) ))
-
 get_args() {
-    # Check the commandline flags early for '--config'.
-    [[ "$*" != *--config* && "$*" != *--no_config* ]] && get_user_config
+    # Check the commandline flags early for '-config'.
+    [[ "$*" != *-config* && "$*" != *-c* ]] && get_user_config
+    while [[ "$1" ]]; do
+            case $1 in
+                # Info                
+                "-c"|"-config") 
+                    make_config ;;
+            esac
+
+        shift
+    done
+}
+
+
+# Colors and palette method stolen from dylanaraps pftech: https://github.com/dylanaraps/pfetch
+get_colors(){
+    c0='[0m'
+    c1='[31m'; c2='[32m'
+    c3='[33m'; c4='[34m'
+    c5='[35m'; c6='[36m'
+    c7='[37m'; c8='[38m'
+    c9='^[[37m'
+
+    palette="[7m$c1 $c1 $c2 $c2 $c3 $c3 $c4 $c4 $c1 $c1 $c6 $c6 [m"
+
+
+    bold=$(tput bold)
+    normal=$(tput sgr0)
+}
+
+
+main(){
+    sovdiff=$(( ($(date +%s) - $(date -d "1991-12-25 UTC" +%s)) / (60*60*24) ))
+
+    eval "$config"
+
+    
+    get_colors
+    get_args "$@"
+    hammer_sickle
+    print_info
 
 }
 
-eval "$config"
+main "$@"
 
-get_args "$@"
-
-
-# Print
-cat <<-EOF
-
- ${ART1}    
- ${ART2}    ${c5}${bold}comrade${c0} ${bold}${user}
- ${ART3}    ${normal}${c0}of ${host}
- ${ART4}    
- ${ART5}    ${c5}${bold}stance${c0}     ${normal}${stance}
- ${ART6}    ${c5}${bold}language${c0}   ${normal}${language}
- ${ART7}    
- ${ART8}    
- ${ART9}    
- ${ART0}    ${c5}${sovdiff} ${normal}days since USSR broke
- 
- ${ARTz}    ${c1}███${c2}███${c3}███${c4}███${c5}███
-
-EOF
-
-
-xdg-open https://www.youtube.com/watch?v=t8EMx7Y16Vo &>/dev/null

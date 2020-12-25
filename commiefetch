@@ -107,16 +107,17 @@ err() {
 }
 
 make_config(){
-    read -p "Choose your stance: " stance
+    read -p "What is your stance: " stance
     cat <<- EOF
-    1. Russian
-    2. Bengali
-    3. Hindi/Urdu
-    4. German
-    5. French
-    6. Chinese
+
+1. Russian
+2. Bengali
+3. Hindi/Urdu
+4. German
+5. French
+6. Chinese
 EOF
-    read -p "What is your language: " language
+    read -p "Choose your language: " language
     while [[ ! $language =~ ^[0-9]+$ ]] ; do
         read -p "Please enter a number " language
     done
@@ -129,7 +130,7 @@ EOF
 
         # The config file doesn't exist, create it.
         mkdir -p "${XDG_CONFIG_HOME}/commiefetch/"
-        cp commiefetch.py ${XDG_CONFIG_HOME}/commiefetch/
+        # cp commiefetch.py ${XDG_CONFIG_HOME}/commiefetch/
         printf '%s\n' "$config" > "$config_file"
 
 
@@ -192,12 +193,8 @@ get_colors(){
 
 get_info()
 {
-    bezos_file="${XDG_CONFIG_HOME}/commiefetch/commiefetch.py"
-    bezos=""
-    if [[ -f ${bezos_file} ]]; then
-        bezos=$(python ${bezos_file} -f '{bezos} ')
-        bezos="${c1}${bold}${bezos}${normal}is Jeff Bezos' net worth"
-    fi
+    bezos=$(commiefetchpy -f '{bezos} ')
+    bezos="${c1}${bold}${bezos}${normal}is Jeff Bezos' net worth"
     sovdiff=$(( ($(date +%s) - $(date -d "1991-12-25 UTC" +%s)) / (60*60*24) ))
 }
 

@@ -18,15 +18,21 @@ ART5="${c1}${bold}     ,%@#S@@S\   %@#,  "
 ART6="${c1}${bold}       *  \S@@%\ %@#,  "
 ART7="${c1}${bold}    /@,     \S@@%@@*   "
 ART8="${c1}${bold}  ,/@%@%+:,,,:%@@@#    "
-ART9="${c1}${bold} ,/@%/+S@@@@@@@@%#@&   "
-ART0="${c1}${bold}  //      ''''   '&&]  "
+ART9="${c1}${bold} ,/@%/+S@@@@@@@@%#@&\  "
+ART0="${c1}${bold}  //      ''''   \%&&} "
 ARTz="${c1}${bold}                       "
 }
 
+get_underline() {
+    length=${#host}
+    printf -v underline "%${length}s"
+    printf -v bar '%b%b' \
+    "${underline// /"-"}"
+}
 
 print_info(){
+get_underline
 
-# music
 case $language in
     "1") 
     language='Russian';;
@@ -44,17 +50,16 @@ esac
 foo=$((1 + $RANDOM % 10))
 cat <<-EOF
 
- ${ART1}    
- ${ART2}    ${c1}${bold}comrade${c0} ${user}
- ${ART3}    ${normal}of ${host}
- ${ART4}    
- ${ART5}    ${c1}${bold}stance     ${normal}${stance}
- ${ART6}    ${c1}${bold}language   ${normal}${language}
+ ${ART1}    ${host}
+ ${ART2}    ${bar}
+ ${ART3}    ${c1}${bold}comrade    ${c0}${user}
+ ${ART4}    ${c1}${bold}stance     ${normal}${stance}
+ ${ART5}    ${c1}${bold}language   ${normal}${language}
+ ${ART6}    
  ${ART7}    
- ${ART8}    
- ${ART9}    
- ${ART0}    ${c1}${sovdiff} ${normal}days since USSR broke
- 
+ ${ART8}    ${c1}${sovdiff} ${normal}days since USSR broke
+ ${ART9}    ${bezos} 
+ ${ART0}    
  ${ARTz}    ${c1}███${c5}███${c4}███${c3}███${c2}███
  
 EOF
@@ -81,13 +86,7 @@ esac
 }
 
 
-#####################
 
-# artist=$(python ~/.config/rofi/applets/applets/play_pause.py -f '{artist}')
-# album=$(python ~/.config/rofi/applets/applets/play_pause.py -f '{album}')
-# current=$(python ~/.config/rofi/applets/applets/play_pause.py -f '{song}')
-
-#####################
 
 read -rd '' config <<'EOF'
 stance=marxist
@@ -130,6 +129,7 @@ EOF
 
         # The config file doesn't exist, create it.
         mkdir -p "${XDG_CONFIG_HOME}/commiefetch/"
+        cp commiefetch.py ${XDG_CONFIG_HOME}/commiefetch/
         printf '%s\n' "$config" > "$config_file"
 
 
@@ -190,16 +190,34 @@ get_colors(){
     normal=$(tput sgr0)
 }
 
+get_info()
+{
+    bezos_file="${XDG_CONFIG_HOME}/commiefetch/commiefetch.py"
+    bezos=""
+    if [[ -f ${bezos_file} ]]; then
+        bezos=$(python ${bezos_file} -f '{bezos} ')
+        bezos="${c1}${bold}${bezos}${normal}is Jeff Bezos' net worth"
+    fi
+    sovdiff=$(( ($(date +%s) - $(date -d "1991-12-25 UTC" +%s)) / (60*60*24) ))
+}
+
 
 main(){
-    sovdiff=$(( ($(date +%s) - $(date -d "1991-12-25 UTC" +%s)) / (60*60*24) ))
-
+    
     eval "$config"
 
     
+
+    # PREFIX?=/usr
+    # BIN?=$(PREFIX)/bin
+
+    # echo "${BIN}"
+
     get_colors
     get_args "$@"
     hammer_sickle
+    get_info
+    music
     print_info
 
 }

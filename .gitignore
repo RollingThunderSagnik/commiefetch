@@ -4,6 +4,7 @@ __pycache__/
 *$py.class
 
 cneofetch
+
 # C extensions
 *.so
 

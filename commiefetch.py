@@ -39,12 +39,6 @@ parser.add_argument(
     metavar='the index of the font to use for the main label',
     dest='font'
 )
-parser.add_argument(
-    '--playpause-font',
-    type=str,
-    metavar='the index of the font to use to display the playpause indicator',
-    dest='play_pause_font'
-)
 
 
 args = parser.parse_args()
@@ -57,13 +51,12 @@ def fix_string(string):
         return string.encode('utf-8')
 
 # Default parameters
-output = fix_string(u'{play_pause} {artist}: {song} {album}')
+output = fix_string(u'{bezos}')
 trunclen = 40
 #play_pause = fix_string(u'\u25B6,\u23F8') # first character is play, second is paused
 play_pause = 'playing,paused'
 label_with_font = '%{{T{font}}}{label}%{{T-}}'
 font = args.font
-play_pause_font = args.play_pause_font
 
 # parameters can be overwritten by args
 if args.trunclen is not None:

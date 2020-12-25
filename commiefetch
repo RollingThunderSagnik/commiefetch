@@ -30,26 +30,43 @@ get_underline() {
     "${underline// /"-"}"
 }
 
+print_help(){
+    get_underline
+    cat <<-EOF
+${bold}commiefetch v0.0.1
+
+USAGE
+${normal}commiefetch [-h] [-c] [-nm] command...
+
+${bold}CHAINABLE FLAGS${normal}
+-nm, --no-music     Disable music
+
+${bold}COMMANDS${normal}
+-c, --config        Generate config
+
+-h, --help          Display this guide
+EOF
+}
+
 print_info(){
-get_underline
 
-case $language in
-    "1") 
-    language='Russian';;
-    "2") 
-    language='Bengali';;
-    "3") 
-    language="Hindi/Urdu";;
-    "4") 
-    language="German";;
-    "5") 
-    language="French";;
-    "6") 
-    language="Chinese";;
-esac
-foo=$((1 + $RANDOM % 10))
-cat <<-EOF
-
+    get_underline
+    case $language in
+        "1") 
+        language='Russian';;
+        "2") 
+        language='Bengali';;
+        "3") 
+        language="Hindi/Urdu";;
+        "4") 
+        language="German";;
+        "5") 
+        language="French";;
+        "6") 
+        language="Chinese";;
+    esac
+    # foo=$((1 + $RANDOM % 10))
+    cat <<-EOF
  ${ART1}    ${host}
  ${ART2}    ${bar}
  ${ART3}    ${c1}${bold}comrade    ${c0}${user}
@@ -61,28 +78,26 @@ cat <<-EOF
  ${ART9}    ${bezos} 
  ${ART0}    
  ${ARTz}    ${c1}███${c5}███${c4}███${c3}███${c2}███
- 
 EOF
 }
 
 music(){
-    # echo "halo" $language
-case $language in
-                # Info
-"1") 
-xdg-open https://youtu.be/t8EMx7Y16Vo &>/dev/null;;
-"2") 
-xdg-open https://youtu.be/dvtNyCtVmNk &>/dev/null;;
-"3") 
-xdg-open https://youtu.be/RIRauszSIAg &>/dev/null;;
-"4") 
-xdg-open https://youtu.be/bzcAeZpVI1Q &>/dev/null;;
-"5") 
-xdg-open https://youtu.be/cKSjkklFzyU &>/dev/null;;
-"6") 
-xdg-open https://youtu.be/X9pGTOlhRvs &>/dev/null;;
-
-esac
+if [[ play_music -eq 1 ]]; then
+    case $language in
+        "1") 
+        xdg-open https://youtu.be/t8EMx7Y16Vo &>/dev/null;;
+        "2") 
+        xdg-open https://youtu.be/dvtNyCtVmNk &>/dev/null;;
+        "3") 
+        xdg-open https://youtu.be/RIRauszSIAg &>/dev/null;;
+        "4") 
+        xdg-open https://youtu.be/bzcAeZpVI1Q &>/dev/null;;
+        "5") 
+        xdg-open https://youtu.be/cKSjkklFzyU &>/dev/null;;
+        "6") 
+        xdg-open https://youtu.be/X9pGTOlhRvs &>/dev/null;;
+    esac
+fi
 }
 
 
@@ -161,13 +176,20 @@ EOF
 }
 
 get_args() {
+    play_music=1
     # Check the commandline flags early for '-config'.
     [[ "$*" != *-config* && "$*" != *-c* ]] && get_user_config
     while [[ "$1" ]]; do
             case $1 in
                 # Info                
-                "-c"|"-config") 
-                    make_config ;;
+                "-c"|"--config") 
+                    make_config
+                    exit ;;
+                "-nm" | "--no-music") 
+                    play_music=0 ;;
+                "-h" | "--help") 
+                    print_help
+                    exit ;;
             esac
 
         shift

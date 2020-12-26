@@ -6,8 +6,10 @@
 
 
 
- ## <img height=25 alt="Visits" src="http://ForTheBadge.com/images/badges/made-with-python.svg"/> <img height=25  alt="Visits" src="https://badges.pufler.dev/updated/RollingThunderSagnik/commiefetch?style=for-the-badge&color=f54960&labelColor=373e4d"/> <img height=25 alt="Visits" src="https://badges.pufler.dev/created/RollingThunderSagnik/commiefetch?style=for-the-badge&color=f54960&labelColor=373e4d"/>
+ ## <img height=25 alt="Visits" src="http://ForTheBadge.com/images/badges/made-with-python.svg"/>  <img height=25 alt="Visits" src="https://badges.pufler.dev/created/RollingThunderSagnik/commiefetch?style=for-the-badge&color=f54960&labelColor=373e4d"/> <img height=25 alt="Visits" src="https://forthebadge.com/images/badges/kinda-sfw.svg"/>
 
+
+<!-- <img height=25  alt="Visits" src="https://badges.pufler.dev/updated/RollingThunderSagnik/commiefetch?style=for-the-badge&color=f54960&labelColor=373e4d"/> -->
 ### Hi, fellow commie! 
 
 **commiefetch** is a command-line communist information tool written in `python` and `bash` that displays communist statistics directly on your terminal. commiefetch is an online tool - it requires internet access for complete functionality. 

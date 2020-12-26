@@ -4,10 +4,10 @@
 
 </div>
 
-###  <img height=30 src="https://badges.pufler.dev/created/RollingThunderSagnik/commiefetch?style=for-the-badge&color=f54960&labelColor=373e4d"/> <img height=30 src="https://forthebadge.com/images/badges/works-on-my-machine.svg"/> <img height=30  src="https://forthebadge.com/images/badges/kinda-sfw.svg"/>
+###  <img height=30 src="https://badges.pufler.dev/created/RollingThunderSagnik/commiefetch?style=for-the-badge&color=f54960&labelColor=373e4d"/> <img height=30 alt="Visits" src="https://forthebadge.com/images/badges/powered-by-black-magic.svg"/> <img height=30  src="https://forthebadge.com/images/badges/kinda-sfw.svg"/>
 
 
-<!--<img height=30 alt="Visits" src="https://forthebadge.com/images/badges/powered-by-black-magic.svg"/> <img height=30  alt="Visits" src="https://badges.pufler.dev/updated/RollingThunderSagnik/commiefetch?style=for-the-badge&color=f54960&labelColor=373e4d"/> -->
+<!-- <img height=30 src="https://forthebadge.com/images/badges/works-on-my-machine.svg"/> <img height=30  alt="Visits" src="https://badges.pufler.dev/updated/RollingThunderSagnik/commiefetch?style=for-the-badge&color=f54960&labelColor=373e4d"/> -->
 ### Hi, fellow commie! 
 
 **commiefetch** is a command-line communist information tool written in `python` and `bash` that displays communist statistics directly on your terminal. commiefetch is an online tool - it requires internet access for complete functionality. 

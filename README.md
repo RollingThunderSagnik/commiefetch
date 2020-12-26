@@ -1,12 +1,10 @@
 <div align="center">
 <h2>commiefetch ☭</h2>
 <h4>a fetch for communists around the world</h4>
-<br/>
+
 </div>
 
-
-
- ## <img height=25 alt="Visits" src="http://ForTheBadge.com/images/badges/made-with-python.svg"/>  <img height=25 alt="Visits" src="https://badges.pufler.dev/created/RollingThunderSagnik/commiefetch?style=for-the-badge&color=f54960&labelColor=373e4d"/> <img height=25 alt="Visits" src="https://forthebadge.com/images/badges/kinda-sfw.svg"/>
+### <img height=25 alt="Visits" src="http://ForTheBadge.com/images/badges/made-with-python.svg"/>  <img height=25 alt="Visits" src="https://badges.pufler.dev/created/RollingThunderSagnik/commiefetch?style=for-the-badge&color=f54960&labelColor=373e4d"/> <img height=25 alt="Visits" src="https://forthebadge.com/images/badges/kinda-sfw.svg"/>
 
 
 <!-- <img height=25  alt="Visits" src="https://badges.pufler.dev/updated/RollingThunderSagnik/commiefetch?style=for-the-badge&color=f54960&labelColor=373e4d"/> -->

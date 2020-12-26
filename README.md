@@ -1,17 +1,20 @@
 <div align="center">
-<h1>commiefetch ☭</h1>
-<h3>a fetch for communists around the world</h3s>
+<h2>commiefetch ☭</h2>
+<h4>a fetch for communists around the world</h4>
+<br/>
 </div>
 
-<p align="center">
-	
-</p>
 
-### Hi, fellow commie! <img align="right" alt="Visits" src="https://badges.pufler.dev/updated/RollingThunderSagnik/commiefetch?style=flat-square&label=&color=f54960&logo=GitHub&logoColor=white&labelColor=373e4d"/>
+
+ ## <img height=25 alt="Visits" src="http://ForTheBadge.com/images/badges/made-with-python.svg"/> <img height=25  alt="Visits" src="https://badges.pufler.dev/updated/RollingThunderSagnik/commiefetch?style=for-the-badge&color=f54960&labelColor=373e4d"/> <img height=25 alt="Visits" src="https://badges.pufler.dev/created/RollingThunderSagnik/commiefetch?style=for-the-badge&color=f54960&labelColor=373e4d"/>
+
+### Hi, fellow commie! 
 
 **commiefetch** is a command-line communist information tool written in `python` and `bash` that displays communist statistics directly on your terminal. commiefetch is an online tool - it requires internet access for complete functionality. 
 
 Contributions are very welcome! You can help it by contributing scripts - maybe the price of guillotine in the user's country, triangulating the current location of Zizek, etc.
+
+<br/>
 
 ## Installation
 
@@ -23,10 +26,14 @@ Contributions are very welcome! You can help it by contributing scripts - maybe 
 6. Run commiefetch anywhere with `commiefetch` 
 7. Comrades, mobilise! ✊✊✊
 
+<br/>
+
 #### We Shall All Be One
 
 
 ```shell
+#Octocommies of Github unite!
+
 "             ,\,       "
 "              +\*:     "
 "       ,+S##?  :#@+    "
@@ -38,8 +45,6 @@ Contributions are very welcome! You can help it by contributing scripts - maybe 
 " ,/@%/+S@@@@@@@@%#@&   "
 "  //      ''''   '&&}  "
 "                       "
-
-#Octocommies of Github unite!
 ```
 
 

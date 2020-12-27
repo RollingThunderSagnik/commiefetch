@@ -10,19 +10,63 @@ host="$(uname -n)"
 
 hammer_sickle()
 {
-ART1="${c1}${bold}             .\,       "
-ART2="${c1}${bold}              +\*:     "
-ART3="${c1}${bold}       ,+S##?  :#@+    "
-ART4="${c1}${bold}     ,+S@@@%,   :@@+   "
-ART5="${c1}${bold}     ,%@#S@@S\   %@#,  "
-ART6="${c1}${bold}       *  \S@@%\ %@#,  "
-ART7="${c1}${bold}    /@,     \S@@%@@*   "
-ART8="${c1}${bold}  ,/@%@%+:,,,:%@@@#    "
-ART9="${c1}${bold} ,/@%/+S@@@@@@@@%#@&\  "
-ART0="${c1}${bold}  //      ''''   \%&&} "
-ARTz="${c1}${bold}                       "
+ART1="${c1}${bold}${bold}             .\,       "
+ART2="${c1}${bold}${bold}              +\*:     "
+ART3="${c1}${bold}${bold}       ,+S##?  :#@+    "
+ART4="${c1}${bold}${bold}     ,+S@@@%,   :@@+   "
+ART5="${c1}${bold}${bold}     ,%@#S@@S\   %@#,  "
+ART6="${c1}${bold}${bold}       *  \S@@%\ %@#,  "
+ART7="${c1}${bold}${bold}    /@,     \S@@%@@*   "
+ART8="${c1}${bold}${bold}  ,/@%@%+:,,,:%@@@#    "
+ART9="${c1}${bold}${bold} ,/@%/+S@@@@@@@@%#@&\  "
+ART0="${c1}${bold}${bold}  //      ''''   \%&&} "
+ARTz="${c1}${bold}${bold}                       "
 }
 
+trot()
+{
+ART1="${c1}${bold}${bold}       ,/,             "
+ART2="${c1}${bold}${bold}     :*/+              "
+ART3="${c1}${bold}${bold}    +@#:${c0}${bold}${bold}///${c1}${bold}${bold}##S+,       "
+ART4="${c1}${bold}${bold}   +@@:${c0}${bold}${bold}///${c1}${bold}${bold},%@@@S+,     "
+ART5="${c1}${bold}${bold}  ,#@%${c0}${bold}${bold}///${c1}${bold}${bold}/S@@S#@%,     "
+ART6="${c1}${bold}${bold}  ,#@${c0}${bold}${bold}///${c1}${bold}${bold}%@@S/${c0}${bold}${bold}///${c1}${bold}${bold}       "
+ART7="${c1}${bold}${bold}   *${c0}${bold}${bold}///////////${c1}${bold}${bold} ,@\    "
+ART8="${c1}${bold}${bold}   {#@@@%:,${c0}${bold}${bold}///${c1}${bold}${bold}+%@%@\,  "
+ART9="${c1}${bold}${bold}   &@#%@@@${c0}${bold}${bold}///${c1}${bold}${bold}@@S+\%@\, "
+ART0="${c1}${bold}${bold}  {&&'   ${c0}${bold}${bold}///${c1}${bold}${bold}'      \\\  "
+ARTz="${c1}${bold}${bold}                       "
+}
+
+anA()
+{
+ART1="${c1}${bold}${bold}      ,;*aAAAAAa*;,      "
+ART2="${c1}${bold}${bold}   .aAAAAaAAAAAaAAAAa.   "
+ART3="${c1}${bold}${bold}  aAAa.  aAA!AA;  .aAAa  "
+ART4="${c1}${bold}${bold} aAA.   aAAa aAAa   .AAa "
+ART5="${c1}${bold}${bold}:AAa  .aAAa. .aAAa.  aAA:"
+ART6="${c1}${bold}${bold}:AAa .aAAAAAAAAAAAa. aAA:"
+ART7="${c1}${bold}${bold} aAAaAAa         aAAaAAa "
+ART8="${c1}${bold}${bold}  aAAAA.         .AAAA+  "
+ART9="${c1}${bold}${bold}   *aAAAAAa,,,aAAAAAa*   "
+ART0="${c1}${bold}${bold}      '^*aAAAAAa*^'      "
+ARTz="${c1}${bold}${bold}                         "
+}
+
+leftist_unity()
+{
+ART1="${c1}      ,;${c1}${bold},/,${normal}${c1}AAAAa*;,      ${bold}"
+ART2="${normal}${c1}   .aA${c1}${bold}:*/+${normal}${c1}AAAAAaAAAAa.   ${bold}"
+ART3="${normal}${c1}  aAA${c1}${bold}+@#:${c0}${bold}///${c1}${bold}##S+,${normal}${c1} .aAAa  "
+ART4="${normal}${c1} aAA${c1}${bold}+@@:${c0}${bold}///${c1}${bold},%@@@S+,${normal}${c1} .AAa "
+ART5="${c1}:AA${c1}${bold},#@%${c0}${bold}///${c1}${bold}/S@@S#@%,${normal}${c1}  aAA:"
+ART6="${c1}:AA${c1}${bold},#@${c0}${bold}///${c1}${bold}%@@S/${c0}${bold}///${normal}${c1}Aa. aAA:"
+ART7="${c1} aAA${c1}${bold}*${c0}${bold}///////////${c1}${bold} ${c1}${bold},@\ ${normal}${c1}aAAa "
+ART8="${c1}  aA${c1}${bold}{#@@@%:,${c0}${bold}///${c1}${bold}+%@%@\,${normal}${c1}+  "
+ART9="${c1}   *${c1}${bold}&@#%@@@${c0}${bold}///${c1}${bold}@@S+\%@\,  "
+ART0="${c1}   ${c1}${bold}{&&'${normal}${c1}^*a${c0}${bold}///${c1}${bold}'${normal}${c1}Aa*^' ${c1}${bold}\\\   "
+ARTz="${c1}${bold}                         "
+}
 get_underline() {
     length=${#host}
     printf -v underline "%${length}s"
@@ -51,6 +95,25 @@ EOF
 print_info(){
 
     get_underline
+
+    case $stance in
+        "1") 
+        hammer_sickle
+        stance='Marxist-Leninist';;
+        "2") 
+        hammer_sickle
+        stance='Marxist-Leninist-Maoist';;
+        "3") 
+        trot
+        stance="Trotskyist";;
+        "4") 
+        anA
+        stance="Anarcho-Communist";;
+        "5") 
+        leftist_unity
+        stance="Leftist Unity";;
+    esac
+
     case $language in
         "1") 
         language='Russian';;
@@ -74,7 +137,7 @@ print_info(){
  ${ART5}    ${c1}${bold}language   ${normal}${language}
  ${ART6}    
  ${ART7}    
- ${ART8}    ${c1}${sovdiff} ${normal}days since USSR broke
+ ${ART8}    ${c1}${bold}${sovdiff} ${normal}days since USSR broke
  ${ART9}    ${bezos} 
  ${ART0}    
  ${ARTz}    ${c1}███${c5}███${c4}███${c3}███${c2}███
@@ -122,25 +185,41 @@ err() {
 }
 
 make_config(){
-    read -p "What is your stance: " stance
-    cat <<- EOF
-
-1. Russian
-2. Bengali
-3. Hindi/Urdu
-4. German
-5. French
-6. Chinese
+    clear
+        cat <<- EOF
+${c5}[${c4}1${c5}]${c0} Marxist-Leninist
+${c5}[${c4}2${c5}]${c0} Marxist-Leninist-Maoist
+${c5}[${c4}3${c5}]${c0} Trotskyist
+${c5}[${c4}4${c5}]${c0} Anarcho-Communist
+${c5}[${c4}5${c5}]${c0} Leftist Unity
 EOF
-    read -p "Choose your language: " language
+    printf "\nChoose your stance: "
+    read -n 1 -r stance
+    while [[ ! $stance =~ ^[0-9]+$ ]] ; do
+        printf "Please enter a number: " 
+        read -n 1 -r stance
+    done
+
+    clear
+    cat <<- EOF
+${c5}[${c4}1${c5}]${c0} Russian
+${c5}[${c4}2${c5}]${c0} Bengali
+${c5}[${c4}3${c5}]${c0} Hindi/Urdu
+${c5}[${c4}4${c5}]${c0} German
+${c5}[${c4}5${c5}]${c0} French
+${c5}[${c4}6${c5}]${c0} Chinese
+EOF
+    printf "\nChoose your language: "
+    read -n 1 -r language
     while [[ ! $language =~ ^[0-9]+$ ]] ; do
-        read -p "Please enter a number " language
+        printf "Please enter a number: " 
+        read -n 1 -r language
     done
     read -rd '' config <<EOF
-    stance=${stance}
-    language=${language}
+stance=${stance}
+language=${language}
 EOF
-
+clear
         config_file="${XDG_CONFIG_HOME}/commiefetch/config.conf"
 
         # The config file doesn't exist, create it.
@@ -216,7 +295,7 @@ get_colors(){
 get_info()
 {
     bezos=$(commiefetchpy -f '{bezos} ')
-    bezos="${c1}${bold}${bezos}${normal}is Jeff Bezos' net worth"
+    bezos="${c1}${bold}${bold}${bezos}${normal}is Jeff Bezos' net worth"
     sovdiff=$(( ($(date +%s) - $(date -d "1991-12-25 UTC" +%s)) / (60*60*24) ))
 }
 
@@ -234,7 +313,6 @@ main(){
 
     get_colors
     get_args "$@"
-    hammer_sickle
     get_info
     music
     print_info

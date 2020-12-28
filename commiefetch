@@ -10,62 +10,62 @@ host="$(uname -n)"
 
 hammer_sickle()
 {
-ART1="${c1}${bold}${bold}             .\,       "
-ART2="${c1}${bold}${bold}              +\*:     "
-ART3="${c1}${bold}${bold}       ,+S##?  :#@+    "
-ART4="${c1}${bold}${bold}     ,+S@@@%,   :@@+   "
-ART5="${c1}${bold}${bold}     ,%@#S@@S\   %@#,  "
-ART6="${c1}${bold}${bold}       *  \S@@%\ %@#,  "
-ART7="${c1}${bold}${bold}    /@,     \S@@%@@*   "
-ART8="${c1}${bold}${bold}  ,/@%@%+:,,,:%@@@#    "
-ART9="${c1}${bold}${bold} ,/@%/+S@@@@@@@@%#@&\  "
-ART0="${c1}${bold}${bold}  //      ''''   \%&&} "
-ARTz="${c1}${bold}${bold}                       "
+ART1="${redb}             .\,       "
+ART2="${redb}              +\*:     "
+ART3="${redb}       ,+S##?  :#@+    "
+ART4="${redb}     ,+S@@@%,   :@@+   "
+ART5="${redb}     ,%@#S@@S\   %@#,  "
+ART6="${redb}       *  \S@@%\ %@#,  "
+ART7="${redb}    /@,     \S@@%@@*   "
+ART8="${redb}  ,/@%@%+:,,,:%@@@#    "
+ART9="${redb} ,/@%/+S@@@@@@@@%#@&\  "
+ART0="${redb}  //      ''''   \%&&} "
+ARTz="${redb}                       "
 }
 
 trot()
 {
-ART1="${c1}${bold}${bold}       ,/,             "
-ART2="${c1}${bold}${bold}     :*/+              "
-ART3="${c1}${bold}${bold}    +@#:${c0}${bold}${bold}///${c1}${bold}${bold}##S+,       "
-ART4="${c1}${bold}${bold}   +@@:${c0}${bold}${bold}///${c1}${bold}${bold},%@@@S+,     "
-ART5="${c1}${bold}${bold}  ,#@%${c0}${bold}${bold}///${c1}${bold}${bold}/S@@S#@%,     "
-ART6="${c1}${bold}${bold}  ,#@${c0}${bold}${bold}///${c1}${bold}${bold}%@@S/${c0}${bold}${bold}///${c1}${bold}${bold}       "
-ART7="${c1}${bold}${bold}   *${c0}${bold}${bold}///////////${c1}${bold}${bold} ,@\    "
-ART8="${c1}${bold}${bold}   {#@@@%:,${c0}${bold}${bold}///${c1}${bold}${bold}+%@%@\,  "
-ART9="${c1}${bold}${bold}   &@#%@@@${c0}${bold}${bold}///${c1}${bold}${bold}@@S+\%@\, "
-ART0="${c1}${bold}${bold}  {&&'   ${c0}${bold}${bold}///${c1}${bold}${bold}'      \\\  "
-ARTz="${c1}${bold}${bold}                       "
+ART1="${redb}       ,/,             "
+ART2="${redb}     :*/+              "
+ART3="${redb}    +@#:${c0}${bold}${bold}///${redb}##S+,       "
+ART4="${redb}   +@@:${c0}${bold}${bold}///${redb},%@@@S+,     "
+ART5="${redb}  ,#@%${c0}${bold}${bold}///${redb}/S@@S#@%,     "
+ART6="${redb}  ,#@${c0}${bold}${bold}///${redb}%@@S/${c0}${bold}${bold}///${redb}       "
+ART7="${redb}   *${c0}${bold}${bold}///////////${redb} ,@\    "
+ART8="${redb}   {#@@@%:,${c0}${bold}${bold}///${redb}+%@%@\,  "
+ART9="${redb}   &@#%@@@${c0}${bold}${bold}///${redb}@@S+\%@\, "
+ART0="${redb}  {&&'   ${c0}${bold}${bold}///${redb}'      \\\  "
+ARTz="${redb}                       "
 }
 
 anA()
 {
-ART1="${c1}${bold}${bold}      ,;*aAAAAAa*;,      "
-ART2="${c1}${bold}${bold}   .aAAAAaAAAAAaAAAAa.   "
-ART3="${c1}${bold}${bold}  aAAa.  aAA!AA;  .aAAa  "
-ART4="${c1}${bold}${bold} aAA.   aAAa aAAa   .AAa "
-ART5="${c1}${bold}${bold}:AAa  .aAAa. .aAAa.  aAA:"
-ART6="${c1}${bold}${bold}:AAa .aAAAAAAAAAAAa. aAA:"
-ART7="${c1}${bold}${bold} aAAaAAa         aAAaAAa "
-ART8="${c1}${bold}${bold}  aAAAA.         .AAAA+  "
-ART9="${c1}${bold}${bold}   *aAAAAAa,,,aAAAAAa*   "
-ART0="${c1}${bold}${bold}      '^*aAAAAAa*^'      "
-ARTz="${c1}${bold}${bold}                         "
+ART1="${redb}      ,;*aAAAAAa*;,      "
+ART2="${redb}   .aAAAAaAAAAAaAAAAa.   "
+ART3="${redb}  aAAa.  aAA!AA;  .aAAa  "
+ART4="${redb} aAA.   aAAa aAAa   .AAa "
+ART5="${redb}:AAa  .aAAa. .aAAa.  aAA:"
+ART6="${redb}:AAa .aAAAAAAAAAAAa. aAA:"
+ART7="${redb} aAAaAAa         aAAaAAa "
+ART8="${redb}  aAAAA.         .AAAA+  "
+ART9="${redb}   *aAAAAAa,,,aAAAAAa*   "
+ART0="${redb}      '^*aAAAAAa*^'      "
+ARTz="${redb}                         "
 }
 
 leftist_unity()
 {
-ART1="${c1}      ,;${c1}${bold},/,${normal}${c1}AAAAa*;,      ${bold}"
-ART2="${normal}${c1}   .aA${c1}${bold}:*/+${normal}${c1}AAAAAaAAAAa.   ${bold}"
-ART3="${normal}${c1}  aAA${c1}${bold}+@#:${c0}${bold}///${c1}${bold}##S+,${normal}${c1} .aAAa  "
-ART4="${normal}${c1} aAA${c1}${bold}+@@:${c0}${bold}///${c1}${bold},%@@@S+,${normal}${c1} .AAa "
-ART5="${c1}:AA${c1}${bold},#@%${c0}${bold}///${c1}${bold}/S@@S#@%,${normal}${c1}  aAA:"
-ART6="${c1}:AA${c1}${bold},#@${c0}${bold}///${c1}${bold}%@@S/${c0}${bold}///${normal}${c1}Aa. aAA:"
-ART7="${c1} aAA${c1}${bold}*${c0}${bold}///////////${c1}${bold} ${c1}${bold},@\ ${normal}${c1}aAAa "
-ART8="${c1}  aA${c1}${bold}{#@@@%:,${c0}${bold}///${c1}${bold}+%@%@\,${normal}${c1}+  "
-ART9="${c1}   *${c1}${bold}&@#%@@@${c0}${bold}///${c1}${bold}@@S+\%@\,  "
-ART0="${c1}   ${c1}${bold}{&&'${normal}${c1}^*a${c0}${bold}///${c1}${bold}'${normal}${c1}Aa*^' ${c1}${bold}\\\   "
-ARTz="${c1}${bold}                         "
+ART1="${reset}${blackf}      ,;${redb},/,${reset}${blackf}AAAAa*;,      "
+ART2="${reset}${blackf}   .aA${redb}:*/+${reset}${blackf}AAAAAaAAAAa.   "
+ART3="${reset}${blackf}  aAA${redb}+@#:${whiteb}///${redb}##S+,${reset}${blackf} .aAAa  "
+ART4="${reset}${blackf} aAA${redb}+@@:${whiteb}///${redb},%@@@S+,${reset}${blackf} .AAa "
+ART5="${reset}${blackf}:AA${redb},#@%${whiteb}///${redb}/S@@S#@%,${reset}${blackf}  aAA:"
+ART6="${reset}${blackf}:AA${redb},#@${whiteb}///${redb}%@@S/${whiteb}///${reset}${blackf}Aa. aAA:"
+ART7="${reset}${blackf} aAA${redb}*${whiteb}///////////${redb} ${redb},@\ ${reset}${blackf}aAAa "
+ART8="${reset}${blackf}  aA${redb}{#@@@%:,${whiteb}///${redb}+%@%@\,${reset}${blackf}+  "
+ART9="${reset}${blackf}   *${redb}&@#%@@@${whiteb}///${redb}@@S+\%@\,  "
+ART0="${reset}${blackf}   ${redb}{&&'${reset}${blackf}^*a${whiteb}///${redb}'${reset}${blackf}Aa*^' ${redb}\\\   "
+ARTz="${redb}                         "
 }
 get_underline() {
     length=${#host}
@@ -130,17 +130,18 @@ print_info(){
     esac
     # foo=$((1 + $RANDOM % 10))
     cat <<-EOF
- ${ART1}    ${host}
- ${ART2}    ${bar}
- ${ART3}    ${c1}${bold}comrade    ${c0}${user}
- ${ART4}    ${c1}${bold}stance     ${normal}${stance}
- ${ART5}    ${c1}${bold}language   ${normal}${language}
+ ${ART1}    ${redb}${host}
+ ${ART2}    ${redb}${bar}
+ ${ART3}    ${redb}comrade    ${c0}${user}
+ ${ART4}    ${redb}stance     ${normal}${stance}
+ ${ART5}    ${redb}language   ${normal}${language}
  ${ART6}    
  ${ART7}    
- ${ART8}    ${c1}${bold}${sovdiff} ${normal}days since USSR broke
+ ${ART8}    ${redb}${sovdiff} ${normal}days since USSR broke
  ${ART9}    ${bezos} 
  ${ART0}    
- ${ARTz}    ${c1}███${c5}███${c4}███${c3}███${c2}███
+ ${ARTz}    ${bold}${c1}███████${c5}██████${c4}██████${c3}██████${c2}██████
+ ${ARTz}    ${normal}${c1}███████${c5}██████${c4}██████${c3}██████${c2}██████
 EOF
 }
 
@@ -285,6 +286,23 @@ get_colors(){
     c7='[37m'; c8='[38m'
     c9='^[[37m'
 
+  esc=""
+
+      blackf="${esc}[30m";   redf="${esc}[31m";    greenf="${esc}[32m"
+  yellowf="${esc}[33m"   bluef="${esc}[34m";   purplef="${esc}[35m"
+  cyanf="${esc}[36m";    whitef="${esc}[37m"
+  
+  blackb="${esc}[1;30m";   redb="${esc}[1;31m";    greenb="${esc}[1;32m"
+  yellowb="${esc}[1;33m"   blueb="${esc}[1;34m";   purpleb="${esc}[1;35m"
+  cyanb="${esc}[1;36m";    whiteb="${esc}[1;37m"
+
+  boldon="${esc}[1m";    boldoff="${esc}[22m"
+  italicson="${esc}[3m"; italicsoff="${esc}[23m"
+  ulon="${esc}[4m";      uloff="${esc}[24m"
+  invon="${esc}[7m";     invoff="${esc}[27m"
+
+  reset="${esc}[0m"
+
     palette="[7m$c1 $c1 $c2 $c2 $c3 $c3 $c4 $c4 $c1 $c1 $c6 $c6 [m"
 
 
@@ -295,7 +313,7 @@ get_colors(){
 get_info()
 {
     bezos=$(commiefetchpy -f '{bezos} ')
-    bezos="${c1}${bold}${bold}${bezos}${normal}is Jeff Bezos' net worth"
+    bezos="${redb}${bezos}${normal}is Jeff Bezos' net worth"
     sovdiff=$(( ($(date +%s) - $(date -d "1991-12-25 UTC" +%s)) / (60*60*24) ))
 }
 
